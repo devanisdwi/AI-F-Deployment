@@ -1,1 +1,1 @@
-web: gunicorn herbaleaf-devanisdwi:app
+web: gunicorn app:app
