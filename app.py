@@ -18,7 +18,10 @@ def predict_label(img_path):
     q.append(query)
     q = np.array(q, dtype='float') / 255.0
     q_pred = model.predict(q)
-    predicted_bit = int(q_pred)
+    if q_pred<=0.5 :
+        predicted_bit = 0
+    else :
+        predicted_bit = 1
     return class_dict[predicted_bit]
 
 @app.route('/', methods=['GET', 'POST'])
