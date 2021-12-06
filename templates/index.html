@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Herbal Leaf Classifier</title>
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="colorlib.com">
+        <link rel="stylesheet" href="../static/fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+		<link rel="stylesheet" href="../static/css/style.css">
+        
+    </head>
+    <body>
+        <div class="wrapper">
+            <form action="">
+                <h2></h2>
+                <section>
+                    <div class="inner">
+						<div class="image-holder">
+							<img src="../static/images/AI F.png" alt="">
+						</div>
+						<div class="form-content">
+							<div class="form-header">
+								<h3>HERBAL LEAF CLASSIFIER</h3>
+							</div>
+							<main>
+                                {% if uploaded_image %}
+                                <img
+                                    src="{{ url_for('send_uploaded_image', filename=uploaded_image) }}"
+                                    class="mt-8 mb-4 h-48 border-8 border-gray-200 rounded-md"
+                                />
+                                {% else %}
+                                <p>Insert Sirih or Seledri</p>
+                                {% endif %} {% if prediction %}
+                                <p class="mb-8">Hasil Prediksi: {{prediction}}</p>
+                                {% endif %}
+                                <form
+                                    method="post"
+                                    enctype="multipart/form-data"
+                                    class="flex flex-col"
+                                >
+                                    <input
+                                        type="file"
+                                        name="image"
+                                        class="
+                                            mb-4
+                                            p-4
+                                            border-8 border-gray-200
+                                            rounded-md
+                                            bg-gray-100
+                                        "
+                                    />
+                                    <button
+                                        type="submit"
+                                        class="p-4 bg-indigo-500 text-white rounded-md"
+                                    >
+                                        Prediksi Gambar
+                                    </button>
+                                </form>
+                            </main>
+						</div>
+					</div>
+                </section>
+            </form>
+		</div>
+
+        <!-- JQUERY -->
+        <script src="../static/js/jquery-3.3.1.min.js"></script>
+		<script src="../static/js/jquery.steps.js"></script>
+		<script src="../static/js/main.js"></script>
+    </body>
+</html>
