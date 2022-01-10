@@ -6,8 +6,8 @@ import cv2
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/'
-model_ann = load_model('dwi_ann_model.h5')
-model_cnn = load_model('dwi_cnn_model.h5')
+model_ann = load_model('dwi-ann-model.h5')
+model_cnn = load_model('dwi-cnn-model.h5')
 
 class_dict = {0: 'Seledri', 1: 'Sirih'}
 
