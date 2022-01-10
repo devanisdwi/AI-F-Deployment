@@ -25,24 +25,13 @@
 								<h3>HERBAL LEAF CLASSIFIER</h3>
 							</div>
 							<main>
-                                {% if uploaded_image %}
-                                <center>
-                                    <img
-                                        alt="centered image"
-                                        height="150"
-                                        width="150"
-                                        src="{{ url_for('send_uploaded_image', filename=uploaded_image) }}"
-                                    />
-                                </center>
-                                {% else %}
-                                <p>Insert Sirih or Seledri</p>
-                                {% endif %} {% if prediction %}
-                                <p class="mb-8">Hasil Prediksi: {{prediction}}</p>
-                                {% endif %}
-                                <input type="file" name="image" class=" mb-4 p-4 border-8 border-gray-200 rounded-md bg-gray-100"/>
-                                <button type="submit" class="p-4 bg-indigo-500 text-white rounded-md">
-                                    Prediksi Gambar
-                                </button>
+                                <p>Choose Method</p>
+                                <p>
+                                    <a href="/ann">ANN</a>
+                                </p>
+                                <p>
+                                    <a href="/cnn">CNN</a>
+                                </p>
                             </main>
 						</div>
 					</div>
